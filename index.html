@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiation à Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 20%;
+            border-right: 1px solid #ddd;
+            padding-right: 20px;
+            position: relative;
+            transition: width 0.5s;
+        }
+        .content {
+            width: 80%;
+            padding-left: 20px;
+            transition: width 0.5s;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .toggle-theme {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .toggle-sidebar {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+        .sidebar h2 {
+            margin-top: 40px; /* Ajustement de la position de "Sommaire" */
+        }
+        .hidden {
+            width: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+          <ul id="sommaire-list"></ul>
+        </div>
+        <div class="content">
+            <span class="toggle-theme" onclick="toggleDarkMode()">☾</span>
+            <h1>Initiation à Python</h1>
+            <p>Bienvenue dans ce cours d'initiation au langage de programmation Python...</p>
+            <!-- Contenu principal ici -->
+            <div class="navigation">
+                <a href="#">Cours Précédent</a>
+                <a href="lecon1.html">Cours Suivant</a>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function toggleDarkMode() {
+        var body = document.body;
+        body.classList.toggle("dark-mode");
+    }
+
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var content = document.querySelector('.content');
+        sidebar.classList.toggle("hidden");
+        if (sidebar.classList.contains("hidden")) {
+            content.style.width = '100%';
+        } else {
+            content.style.width = '80%';
+        }
+    }
+
+    // JavaScript to generate the sommaire dynamically
+    document.addEventListener('DOMContentLoaded', function () {
+        const sommaireList = document.getElementById('sommaire-list');
+        const headings = document.querySelectorAll('.content h2');
+
+        headings.forEach((heading, index) => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.textContent = heading.textContent;
+            link.href = `#section-${index}`;
+            listItem.appendChild(link);
+            sommaireList.appendChild(listItem);
+        });
+    });
+</script>
+          
+</body>
+</html>

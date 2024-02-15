@@ -1,0 +1,16 @@
+[
+    {"name": "Accueil", "link": "index.html"},
+    {"name": "Leçon 1", "link": "lecon1.html"},
+    {"name": "Leçon 2", "link": "lecon2.html"},
+    {"name": "Leçon 3", "link": "lecon3.html"},
+    {"name": "Leçon 4", "link": "lecon4.html"},
+    {"name": "Leçon 5", "link": "lecon5.html"},
+    {"name": "Leçon 6", "link": "lecon6.html"},
+    {"name": "Leçon 7", "link": "lecon7.html"},
+    {"name": "Leçon 8", "link": "lecon8.html"},
+    {"name": "Leçon 9", "link": "lecon9.html"},
+    {"name": "Leçon 10", "link": "lecon10.html"},
+    {"name": "Leçon 11", "link": "lecon11.html"},
+    {"name": "Leçon 12", "link": "lecon12.html"},
+    // Plus d'éléments ici...
+]
